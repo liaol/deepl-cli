@@ -118,7 +118,7 @@ class DeepLCLI:
         hash = f"#{self.fr_lang}/{self.to_lang}/{script}"
         await page.goto("https://www.deepl.com/translator" + hash)
         try:
-            page.waitForSelector("#dl_translator > div.lmt__text", timeout=15000)
+            page.waitForSelector("#dl_translator > div.lmt__text", timeout=30000)
         except TimeoutError:
             raise DeepLCLIPageLoadError("Time limit exceeded. (30000ms)")
 
